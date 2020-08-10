@@ -1,0 +1,1 @@
+gcc -g -O0 -Wall ./src/main.c -o clang

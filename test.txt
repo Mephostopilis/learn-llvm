@@ -1,0 +1,177 @@
+ 
+        "define i32 @buildins_internal_string_cmp(%struct.internal.string* "
+        "%self, %struct.internal.string* %other) {\n"
+        "  %1 = alloca %struct.internal.string*\n"
+        "  %2 = alloca %struct.internal.string*\n"
+        "  store %struct.internal.string* %self, %struct.internal.string** %1\n"
+        "  store %struct.internal.string* %other, "
+        "%struct.internal.string** %2\n"
+        "  %3 = load %struct.internal.string*, %struct.internal.string** %1\n"
+        "  %4 = load %struct.internal.string*, %struct.internal.string** %2\n"
+        "  %5 = getelementptr inbounds %struct.internal.string, %struct.internal.string* %3, "
+        "i32 0, i32 0\n"
+        "  %6 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %4, "
+        "i32 0, i32 0\n"
+        "; TODO:"
+        "  ret i32 0\n"
+        "}\n"
+        "define %struct.internal.string* "
+        
+           
+
+        
+
+	
+
+		
+
+		";  %35 = load i8*, i8** %15\n"
+        ";  %36 = load i32, i32* %13\n"
+        ";  %37 = call %struct.internal.string*"
+	    "@buildins_internal_string_new(i32 20, i8* %35)\n"
+        ";  ret struct.internal.string* %37"
+        
+
+        "define i32"
+        "@buildins_internal_string_concat(%struct.internal.string*, "
+        "%struct.internal.string*) {\n"
+        "  %3 = alloca %struct.internal.string*\n"
+        "  %4 = alloca %struct.internal.string*\n"
+        "  %5 = alloca %struct.internal.string*\n"
+        "  store %struct.internal.string* %0, %struct.internal.string** %3\n"
+        "  store %struct.internal.string* %1, %struct.internal.string** %4\n"
+
+        "  %6 = load %struct.internal.string*, %struct.internal.string** %3\n"
+        "  %7 = load %struct.internal.string*, %struct.internal.string** %4\n"
+        "  %8 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %6, "
+        "i32 0, i32 0\n"
+        "  %9 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %7, "
+        "i32 0, i32 0\n"
+        "  %10 = load i32, i32* %8\n"
+        "  %11 = load i32, i32* %9\n"
+        "  %12 = add nsw i32 %10, %11\n"
+        "  %13 = alloca i32\n"
+        "  store i32 %12, i32* %13\n"
+        "  %14 = load i32, i32* %13\n"
+        "  %15 = alloca i8*\n"
+        "  %16 = call i8* @malloc(i32 %14)\n"
+        "  store i8* %16, i8** %15\n"
+
+		"; copy 1st str\n"
+		"  %17 = load i8*, i8** %15\n"
+        "  %18 = load %struct.internal.string*, %struct.internal.string** %3\n"
+        "  %19 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %18, "
+        "i32 0, i32 0\n"
+        "  %20 = load i32, i32* %19\n"
+        "  %21 = load %struct.internal.string*, %struct.internal.string** %3\n"
+        "  %22 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %21, "
+        "i32 0, i32 1\n"
+        "  %23 = load i8*, i8** %22\n"
+        "  call void @llvm.memcpy.p0i8.p0i8.i32(i8* %17, i8* %23, i32 %20, i1 "
+        "false)\n"
+
+		"; copy 2st str\n"
+		"  %24 = load i8*, i8** %15\n"
+        "  %25 = load %struct.internal.string*, %struct.internal.string** %3\n"
+        "  %26 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %25, "
+        "i32 0, i32 0\n"
+        "  %27 = load i32, i32* %26\n"
+        ";  %28 = getelementptr inbounds i8, "
+        "i8* %24, "
+        "i32 0, i32 0\n"
+
+        ";  %29 = load %struct.internal.string*, %struct.internal.string** %4\n"
+        ";  %30 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %29, "
+        "i32 0, i32 0\n"
+        ";  %31 = load i32, i32* %30\n"
+
+        ";  %32 = load %struct.internal.string*, %struct.internal.string** %4\n"
+        ";  %33 = getelementptr inbounds %struct.internal.string, "
+        "%struct.internal.string* %32, "
+        "i32 0, i32 1\n"
+        ";  %34 = load i8*, i8** %33\n"
+
+        ";  call void @llvm.memcpy.p0i8.p0i8.i32(i8* %28, i8* %34, i32 %31, i1 "
+        "false)\n"
+
+        "  ret i32 0\n"
+        "}\n"
+
+
+           
+		
+	    "  %11 = load i8*, i8** %3\n"
+        "  %12 = load i8*, i8** %2\n"
+        "  %13 = load i32, i32* %1\n"
+        "  call void @llvm.memcpy.p0i8.p0i8.i32(i8* %11, i8* %12, i32 %13, i1 "
+        "false)\n"
+
+       
+
+        ";  %24 = load %struct.internal.string*, %struct.internal.string** %4\n"
+
+define i32 @hello(i8* %a, i32 %b) {
+entry:
+  %0 = alloca i32
+  %1 = alloca i8*
+  store i8* %a, i8** %1
+  %2 = alloca i32
+  store i32 %b, i32* %2
+  %3 = alloca i32
+  %4 = load i8*, i8** %1
+  %5 = call i32 @lmlx_string_strlen(i8* %4)
+  store i32 %5, i32* %3
+  %6 = alloca i128
+  store i128 0, i128* %6
+  %7 = load i128, i128* %6
+  %8 = add nsw i128 %7, 12345
+  store i128 %8, i128* %6
+  %9 = alloca i32
+  store i32 0, i32* %9
+  %10 = alloca i32
+  %11 = load i128, i128* %6
+  %12 = srem i128 %11, 10
+  %13 = trunc i128 %12 to i32
+  store i32 %13, i32* %10
+  %14 = alloca i32
+  store i32 0, i32* %14
+  br label %15
+
+; <label>:15:                                     ; preds = %25, %entry
+  %16 = load i32, i32* %14
+  %17 = icmp slt i32 %16, 1
+  %18 = icmp ne i1 %17, false
+  br i1 %18, label %19, label %28
+
+; <label>:19:                                     ; preds = %15
+  %20 = alloca i32
+  %21 = load i128, i128* %6
+  %22 = srem i128 %21, 10
+  %23 = trunc i128 %22 to i32
+  store i32 %23, i32* %20
+  %24 = load i32, i32* %20
+  store i32 %24, i32* %9
+  br label %25
+
+; <label>:25:                                     ; preds = %19
+  %26 = load i32, i32* %14
+  %27 = add nsw i32 %26, 1
+  store i32 %27, i32* %14
+  br label %15
+
+; <label>:28:                                     ; preds = %15
+  %29 = load i32, i32* %9
+  store i32 %29, i32* %0
+  br label %ret
+
+ret:                                              ; preds = %28
+  %30 = load i32, i32* %0
+  ret i32 %30
+}
